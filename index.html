@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Huy Thịnh (Ben) | Hospitality Senior Sales Leader</title>
+  <meta name="description" content="Portfolio & Resume of Nguyễn Huy Thịnh (Ben) - Senior Sales Manager with 10 years of progressive experience in luxury beachfront resorts.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Firebase App & Firestore SDKs (v10 Modular via CDN) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // Your Firebase Configuration (Replace with your actual keys from Firebase Console if needed)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDummyKeyReplaceWithYoursIfConfigured",
+      authDomain: "porfolia-ben.firebaseapp.com",
+      projectId: "porfolia-ben",
+      storageBucket: "porfolia-ben.appspot.com",
+      messagingSenderId: "1234567890",
+      appId: "1:1234567890:web:abcdef123456"
+    };
+
+    // Initialize Firebase
+    let db = null;
+    try {
+      const app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      window._firebaseDB = db;
+      window._firebaseSaveDoc = async (data) => {
+        return await addDoc(collection(db, "contact_messages"), {
+          ...data,
+          createdAt: serverTimestamp()
+        });
+      };
+    } catch (e) {
+      console.warn("Firebase initialized in standby mode:", e.message);
+    }
+  </script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              dark: '#0B132B',
+              navy: '#1C2541',
+              accent: '#3A506B',
+              emerald: '#059669',
+              sand: '#FAF8F5'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+            serif: ['"Playfair Display"', '"Noto Serif TC"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+    }
+    .dark .glass-card {
+      background: rgba(28, 37, 65, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-brand-sand dark:bg-[#080d1a] text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#hero" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-brand-gold flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+          B
+        </div>
+        <div>
+          <span class="font-serif font-bold text-lg sm:text-xl tracking-tight block text-slate-900 dark:text-white" data-i18n="nav_name">NGUYỄN HUY THỊNH</span>
+          <span class="text-[11px] uppercase tracking-widest text-amber-600 dark:text-brand-gold font-semibold" data-i18n="nav_title">Hospitality Sales Leader</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+        <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-brand-gold transition-colors" data-i18n="nav_about">About</a>
+        <a href="#achievements" class="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-brand-gold transition-colors" data-i18n="nav_impact">Impact & Numbers</a>
+        <a href="#experience" class="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-brand-gold transition-colors" data-i18n="nav_exp">Experience</a>
+        <a href="#skills" class="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-brand-gold transition-colors" data-i18n="nav_skills">Competencies</a>
+        <a href="#references" class="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-brand-gold transition-colors" data-i18n="nav_ref">References</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <!-- Language Selector -->
+        <div class="relative">
+          <select id="lang-select" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold rounded-full px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer shadow-sm text-slate-700 dark:text-slate-200">
+            <option value="en">English (EN)</option>
+            <option value="zh">繁體中文 (ZH)</option>
+            <option value="vi">Tiếng Việt (VI)</option>
+          </select>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300" aria-label="Toggle theme">
+          <i data-lucide="sun" class="hidden dark:block w-4 h-4 text-amber-400"></i>
+          <i data-lucide="moon" class="block dark:hidden w-4 h-4"></i>
+        </button>
+
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-amber-600 to-brand-gold text-white shadow-md hover:shadow-lg hover:brightness-110 active:scale-95 transition-all" data-i18n="btn_contact">
+          Get in Touch
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 dark:text-slate-200 focus:outline-none" aria-label="Open mobile menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden px-6 pt-2 pb-6 space-y-3 bg-white/95 dark:bg-[#0B132B]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl">
+      <a href="#about" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600" data-i18n="nav_about">About</a>
+      <a href="#achievements" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600" data-i18n="nav_impact">Impact & Numbers</a>
+      <a href="#experience" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600" data-i18n="nav_exp">Experience</a>
+      <a href="#skills" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600" data-i18n="nav_skills">Competencies</a>
+      <a href="#references" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600" data-i18n="nav_ref">References</a>
+      <a href="#contact" class="block mt-4 py-2.5 text-center text-sm font-semibold bg-gradient-to-r from-amber-600 to-brand-gold text-white rounded-full" data-i18n="btn_contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-brand-gold border border-amber-200/60 dark:border-amber-700/40 mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span data-i18n="hero_badge">Available for New Executive Opportunities</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white tracking-tight leading-[1.18] mb-6" data-i18n="hero_title">
+            Architecting <span class="text-amber-600 dark:text-brand-gold italic">Hospitality Revenue</span> & Global Market Growth.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 font-normal" data-i18n="hero_desc">
+            Commercially driven sales leader with 10 years of progressive mastery in luxury beachfront hospitality at Palm Garden Beach Resort Hoi An (210 keys). Expert in International Inbound Wholesale, MICE scaling, and high-stakes B2B negotiations.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+            <a href="#contact-form-section" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-slate-900 dark:bg-amber-500 dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-amber-400 shadow-lg hover:shadow-xl transition-all">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span data-i18n="hero_cta_msg">Send Direct Message</span>
+            </a>
+            <a href="portfolio-resume.md" target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-750 transition-all shadow-sm">
+              <i data-lucide="file-text" class="w-4 h-4 text-amber-600 dark:text-brand-gold"></i>
+              <span data-i18n="hero_cta_resume">View Resume</span>
+            </a>
+          </div>
+
+          <!-- Highlight metrics row -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-serif">10+ <span class="text-amber-600 text-lg" data-i18n="stat_years_unit">Yrs</span></div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_years_label">Luxury Hospitality</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-serif">+38%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_kpi_label">2025 Sales KPI Beat</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 font-serif">+200%</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_mice_label">MICE Growth (YoY)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Profile Visual Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-500 to-blue-600 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+            
+            <div class="relative rounded-3xl overflow-hidden glass-card p-6 shadow-2xl border border-white/40 dark:border-slate-700">
+              
+              <div class="relative w-44 h-44 mx-auto rounded-full p-1.5 bg-gradient-to-tr from-amber-500 via-brand-gold to-blue-500 shadow-xl mb-6">
+                <div class="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center text-white overflow-hidden relative">
+                  <div class="text-4xl font-serif font-bold tracking-tight text-brand-goldLight">BT</div>
+                  <span class="text-[11px] uppercase tracking-wider text-slate-300 mt-1 font-semibold">Ben Nguyễn</span>
+                  <div class="absolute inset-0 bg-blue-500/10 pointer-events-none"></div>
+                </div>
+              </div>
+
+              <!-- Profile Details -->
+              <div class="text-center">
+                <h3 class="text-2xl font-bold font-serif text-slate-900 dark:text-white" data-i18n="profile_name">Nguyễn Huy Thịnh</h3>
+                <p class="text-sm font-semibold text-amber-600 dark:text-brand-gold uppercase tracking-wider mt-0.5" data-i18n="profile_title">Senior Sales Manager</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="profile_resort">Palm Garden Beach Resort Hoi An • HCMC Rep. Office</p>
+              </div>
+
+              <!-- Key Badges -->
+              <div class="flex flex-wrap justify-center gap-2 mt-5 text-xs font-medium">
+                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300" data-i18n="badge_feeder">CIS & Europe Feeder</span>
+                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300" data-i18n="badge_contract">Contracting & Allotment</span>
+                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300" data-i18n="badge_leader">Team Mentor</span>
+              </div>
+
+              <!-- Quick Contact Strip -->
+              <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex justify-around text-slate-600 dark:text-slate-300">
+                <a href="tel:+84905464196" title="Call" class="p-2 hover:text-amber-600 hover:scale-110 transition-transform">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:bennguyenht54@gmail.com" title="Email" class="p-2 hover:text-amber-600 hover:scale-110 transition-transform">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ben-nguyen-a09821140/" target="_blank" rel="noopener" title="LinkedIn" class="p-2 hover:text-amber-600 hover:scale-110 transition-transform">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Achievements (Impact & Metrics) -->
+  <section id="achievements" class="py-20 bg-white/60 dark:bg-[#0c142b]/60 border-y border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_achieve_tag">Proven Value Delivery</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white mt-2" data-i18n="sec_achieve_title">
+          Measurable Business Impact
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3 text-base" data-i18n="sec_achieve_desc">
+          Proven history of surpassing institutional targets, penetrating high-value international source markets, and maximizing portfolio ADR.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Metric 1 -->
+        <div class="glass-card rounded-2xl p-6 hover:-translate-y-1.5 transition-all duration-300 relative group overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-brand-gold" data-i18n="m1_year">Year 2025</span>
+          <h3 class="text-3xl font-serif font-extrabold text-slate-900 dark:text-white mt-1">+38% KPI</h3>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2" data-i18n="m1_title">Annual Target Exceeded</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed" data-i18n="m1_desc">
+            Drove unprecedented revenue growth across Leisure, Wholesale, Corporate & MICE via inbound global feeder channels.
+          </p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="glass-card rounded-2xl p-6 hover:-translate-y-1.5 transition-all duration-300 relative group overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="globe-2" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400" data-i18n="m2_year">Market Expansion</span>
+          <h3 class="text-3xl font-serif font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="m2_val">CIS & Russia</h3>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2" data-i18n="m2_title">Charter & Allotment Deals</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed" data-i18n="m2_desc">
+            Secured major commitments following direct representation at international travel summits in Uzbekistan.
+          </p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="glass-card rounded-2xl p-6 hover:-translate-y-1.5 transition-all duration-300 relative group overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="users-check" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400" data-i18n="m3_year">Year 2024</span>
+          <h3 class="text-3xl font-serif font-extrabold text-slate-900 dark:text-white mt-1">+200%</h3>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2" data-i18n="m3_title">MICE Revenue Growth</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed" data-i18n="m3_desc">
+            Acquired major corporate partnerships and conference bookings through aggressive consultative bidding.
+          </p>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="glass-card rounded-2xl p-6 hover:-translate-y-1.5 transition-all duration-300 relative group overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400" data-i18n="m4_year">Synergy & Weddings</span>
+          <h3 class="text-3xl font-serif font-extrabold text-slate-900 dark:text-white mt-1">+300%</h3>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2" data-i18n="m4_title">Wedding Revenue Boost</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed" data-i18n="m4_desc">
+            Achieved via cross-department synergy; also awarded Employee of the Year for outstanding sales performance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Journey / Experience Timeline -->
+  <section id="experience" class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_exp_tag">10-Year Trajectory</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white mt-2" data-i18n="sec_exp_title">
+          Professional Experience
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3 text-base" data-i18n="sec_exp_desc">
+          A sustained record of continuous advancement at Palm Garden Beach Resort Hoi An (210-key luxury beachfront resort).
+        </p>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="relative border-l-2 border-amber-500/30 dark:border-amber-500/20 ml-4 sm:ml-32 space-y-12">
+        
+        <!-- Role 1: Senior Sales Manager -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white dark:border-[#080d1a] shadow-sm"></div>
+          
+          <div class="hidden sm:block absolute -left-36 top-1 text-right w-28">
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-brand-gold" data-i18n="r1_date">
+              Aug 2024 – Present
+            </span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div class="sm:hidden mb-2">
+              <span class="text-xs font-bold uppercase px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-brand-gold" data-i18n="r1_date">
+                Aug 2024 – Present
+              </span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 dark:text-white" data-i18n="r1_role">Senior Sales Manager</h3>
+            <p class="text-sm font-semibold text-amber-600 dark:text-brand-gold mt-0.5" data-i18n="r1_location">Ho Chi Minh City Representative Office</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Palm Garden Beach Resort Hoi An (210-key Luxury Resort)</p>
+
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span data-i18n="r1_b1"><strong>Exceeded 2025 Sales KPI by 38%</strong>, spearheading inbound international leisure and wholesale revenues.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span data-i18n="r1_b2"><strong>International Tour Operator Portfolio:</strong> Managed leading wholesalers across CIS, Russia, Germany, France, Australia, and UK for guaranteed year-round room nights.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span data-i18n="r1_b3"><strong>Yield & Rate Optimization:</strong> Successfully negotiated <strong>8%–12% rate increases</strong> while safeguarding 100% account retention.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span data-i18n="r1_b4"><strong>People Leadership:</strong> Direct leadership and mentorship of <strong>4 Sales Managers</strong>, implementing KPI scorecards and targeted coaching.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span data-i18n="r1_b5"><strong>Global Representation:</strong> Represented property at overseas sales missions, roadshows, and trade expositions.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2: Sales Manager -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-white dark:border-[#080d1a]"></div>
+          
+          <div class="hidden sm:block absolute -left-36 top-1 text-right w-28">
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r2_date">
+              Jan 2020 – Jul 2024
+            </span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 shadow-sm">
+            <div class="sm:hidden mb-2">
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r2_date">Jan 2020 – Jul 2024</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white" data-i18n="r2_role">Sales Manager</h3>
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3" data-i18n="r2_location">HCMC Representative Office</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="r2_desc">
+              Spearheaded commercial B2B sales pipelines, expanded national corporate and agency accounts, navigated market pivots during pandemic challenges, and accelerated post-crisis recovery across group and leisure segments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Role 3: Assistant Sales Manager -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-white dark:border-[#080d1a]"></div>
+          
+          <div class="hidden sm:block absolute -left-36 top-1 text-right w-28">
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r3_date">
+              Jul 2017 – Dec 2019
+            </span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 shadow-sm">
+            <div class="sm:hidden mb-2">
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r3_date">Jul 2017 – Dec 2019</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white" data-i18n="r3_role">Assistant Sales Manager</h3>
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3" data-i18n="r3_location">On-site Property • Hoi An</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="r3_desc">
+              Supervised on-property site inspections, high-profile corporate retreats, and contract execution. Supported senior directors in inventory allotment planning and seasonal rate strategies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Role 4: Sales Executive -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500/80 border-4 border-white dark:border-[#080d1a]"></div>
+          
+          <div class="hidden sm:block absolute -left-36 top-1 text-right w-28">
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r4_date">
+              Jul 2015 – Jun 2017
+            </span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 shadow-sm">
+            <div class="sm:hidden mb-2">
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="r4_date">Jul 2015 – Jun 2017</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg sm:text-xl font-bold font-serif text-slate-900 dark:text-white" data-i18n="r4_role">Sales Executive</h3>
+              <span class="text-xs font-bold text-amber-600 dark:text-brand-gold bg-amber-50 dark:bg-amber-950/40 px-2.5 py-1 rounded-full border border-amber-200 dark:border-amber-800" data-i18n="r4_award">
+                ★ Employee of the Year 2017
+              </span>
+            </div>
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3" data-i18n="r4_location">On-site Property • Hoi An</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="r4_desc">
+              Managed direct guest bookings, corporate MICE coordination, customer retention campaigns, and field sales visits; recognized as top performer of the year.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Competencies & Skills -->
+  <section id="skills" class="py-20 bg-white/60 dark:bg-[#0c142b]/60 border-y border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_skill_tag">Skills Matrix</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white mt-2" data-i18n="sec_skill_title">
+          Strategic & Leadership Competencies
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Pillar 1: Commercial & Strategic -->
+        <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-brand-gold flex items-center justify-center">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white" data-i18n="sk_p1_title">Commercial & Strategic Acumen</h3>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_1">Strategic Sales Planning & Market Penetration</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_expert">Expert</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_2">Revenue Forecasting & Budget Management</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_expert">Expert</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_3">RevPAR, ADR & Occupancy Optimization</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_advanced">Advanced</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_4">Contract Negotiation & Tiered Rate Strategy</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_expert">Expert</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_5">Corporate & MICE Segment Development</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_expert">Expert</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_6">Business Intelligence & Competitive Analytics</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300" data-i18n="lvl_advanced">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Leadership & Management -->
+        <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white" data-i18n="sk_p2_title">Leadership & Operational Mastery</h3>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_7">Sales Team Leadership & Mentorship (4+ Direct Reports)</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300" data-i18n="lvl_active">Active</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_8">KPI Monitoring & Structured Performance Coaching</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300" data-i18n="lvl_expert">Expert</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_9">High-Stakes Decision-Making Under Pressure</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300" data-i18n="lvl_core">Core</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_10">Multi-Department Stakeholder Collaboration</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300" data-i18n="lvl_seamless">Seamless</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_11">Crisis Adaptability & Change Management</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300" data-i18n="lvl_resilient">Resilient</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="sk_12">Trilingual Business Negotiations</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300">EN / ZH / VI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Endorsements / References -->
+  <section id="references" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Education & Credentials (Left 5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_edu_tag">Academic Background</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white" data-i18n="sec_edu_title">
+            Education & Certifications
+          </h2>
+
+          <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-6">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-brand-gold flex items-center justify-center shrink-0">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-slate-900 dark:text-white" data-i18n="edu_deg">Bachelor of English Language</h4>
+                <p class="text-xs text-amber-600 dark:text-brand-gold font-semibold">Ho Chi Minh City University of Technology (HUTECH)</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="edu_desc">Foundation for fluent international negotiations and contract execution.</p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="badge-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-slate-900 dark:text-white" data-i18n="cert_title">Responsible Tourism Marketing</h4>
+                <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold" data-i18n="cert_issuer">Mentoring Workshop Certification</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cert_desc">Sustainable tourism practices, ethical destination promotion.</p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider" data-i18n="lang_title">Languages</span>
+              <div class="flex flex-wrap gap-1.5 justify-end">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">VI (Native)</span>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-amber-600 dark:text-brand-gold">EN (Proficient)</span>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400">ZH (Commercial)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- References & Endorsements (Right 7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_ref_tag">Verification & Trust</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white" data-i18n="sec_ref_title">
+            Professional References
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Ref 1 -->
+            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-slate-800 flex items-center justify-center text-amber-700 dark:text-brand-gold font-bold text-sm">
+                  TT
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white">Mr. Trương Minh Toàn</h4>
+                  <p class="text-xs text-amber-600 dark:text-brand-gold" data-i18n="ref1_title">Former DOSM (2015–2018)</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Palm Garden Beach Resort Hoi An</p>
+              <a href="tel:0908352853" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-amber-600">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                090 835 2853
+              </a>
+            </div>
+
+            <!-- Ref 2 -->
+            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-slate-800 flex items-center justify-center text-blue-700 dark:text-blue-400 font-bold text-sm">
+                  TV
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white">Mrs. Thái Hồng Vân</h4>
+                  <p class="text-xs text-blue-600 dark:text-blue-400" data-i18n="ref2_title">Former Acting HRM (2015–2019)</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Palm Garden Beach Resort Hoi An</p>
+              <a href="tel:0935991068" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-amber-600">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                093 599 1068
+              </a>
+            </div>
+
+            <!-- Ref 3 (Full width) -->
+            <div class="sm:col-span-2 glass-card rounded-2xl p-5 border border-dashed border-amber-500/40 bg-amber-500/5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white">Mrs. Trang Thị Trúc</h4>
+                  <p class="text-xs text-amber-600 dark:text-brand-gold font-semibold" data-i18n="ref3_title">Current Director of Sales (DOS) • Palm Garden Beach Resort</p>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 bg-white/80 dark:bg-slate-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700">
+                  <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-500"></i>
+                  <span data-i18n="ref3_status">Available upon final interview stage</span>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact Form & Direct Inquiries -->
+  <section id="contact-form-section" class="py-24 bg-gradient-to-b from-brand-sand to-amber-100/40 dark:from-[#080d1a] dark:to-[#0B132B] relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-amber-600 dark:text-brand-gold font-bold" data-i18n="sec_contact_tag">Start a Conversation</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 dark:text-white mt-2 mb-4" data-i18n="sec_contact_title">
+          Get In Touch Directly
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed" data-i18n="sec_contact_desc">
+          Fill out the form below to send an email directly to my inbox (<strong>bennguyenht54@gmail.com</strong>), or reach out through my phone and social channels.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Quick Contact Info Cards (Left 5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <a href="tel:+84905464196" class="glass-card rounded-2xl p-5 hover:-translate-y-1 transition-all group flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+              <i data-lucide="phone-call" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold" data-i18n="card_phone">Phone / WhatsApp</span>
+              <p class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">+84 905 464 196</p>
+            </div>
+          </a>
+
+          <a href="mailto:bennguyenht54@gmail.com" class="glass-card rounded-2xl p-5 hover:-translate-y-1 transition-all group flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold" data-i18n="card_email">Direct Email</span>
+              <p class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">bennguyenht54@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ben-nguyen-a09821140/" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 hover:-translate-y-1 transition-all group flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold" data-i18n="card_linkedin">LinkedIn Network</span>
+              <p class="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5" data-i18n="card_linkedin_sub">Connect on LinkedIn</p>
+            </div>
+          </a>
+
+          <div class="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <div class="flex items-center gap-2 text-amber-700 dark:text-brand-gold font-bold mb-1">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              <span data-i18n="location_title">Location & Availability</span>
+            </div>
+            <span data-i18n="location_desc">Based in Ho Chi Minh City, Vietnam. Available for executive travel, international trade shows, and corporate delegations worldwide.</span>
+          </div>
+
+        </div>
+
+        <!-- Contact Form (Right 7 Cols) -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/80 dark:border-slate-700">
+          
+          <!-- Note: Formspree/Email Action -->
+          <form id="portfolio-contact-form" action="https://formspree.io/f/bennguyenht54@gmail.com" method="POST" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="form_name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. John Doe / 李經理" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="form_email">Your Email *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="company" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="form_company">Organization / Tour Operator</label>
+                <input type="text" id="company" name="company" placeholder="e.g. Travel Group / Resort Chain" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400">
+              </div>
+
+              <div>
+                <label for="topic" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="form_topic">Purpose / Subject</label>
+                <select id="topic" name="topic" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-800 dark:text-slate-100">
+                  <option value="Executive Recruitment" data-i18n="opt_recruitment">Executive Career Opportunity</option>
+                  <option value="B2B Partnership" data-i18n="opt_b2b">B2B / Tour Operator Allotment</option>
+                  <option value="MICE / Corporate" data-i18n="opt_mice">MICE & Corporate Event Inquiry</option>
+                  <option value="General Inquiry" data-i18n="opt_general">General Discussion</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="form_msg">Message *</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Please describe your project, proposal, or inquiry..." class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 resize-none"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-amber-600 via-brand-gold to-amber-700 hover:brightness-110 active:scale-[0.99] transition-all shadow-md flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span id="btn-text" data-i18n="form_submit">Send Email Now</span>
+            </button>
+
+            <!-- Feedback Alert Box -->
+            <div id="form-status" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-200 dark:border-slate-800/80 bg-white/40 dark:bg-[#070b16]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
+      <div>
+        © 2026 Nguyễn Huy Thịnh (Ben). <span data-i18n="footer_rights">All rights reserved.</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#hero" class="hover:text-amber-600" data-i18n="footer_top">Back to Top</a>
+        <a href="portfolio-resume.md" target="_blank" class="hover:text-amber-600">Markdown Version</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tri-lingual Translation & Interaction Script -->
+  <script>
+    // --- TRANSLATION DATA DICTIONARY ---
+    const translations = {
+      en: {
+        nav_name: "NGUYỄN HUY THỊNH",
+        nav_title: "Hospitality Sales Leader",
+        nav_about: "About",
+        nav_impact: "Impact & Numbers",
+        nav_exp: "Experience",
+        nav_skills: "Competencies",
+        nav_ref: "References",
+        btn_contact: "Get in Touch",
+        hero_badge: "Available for New Executive Opportunities",
+        hero_title: "Architecting <span class=\"text-amber-600 dark:text-brand-gold italic\">Hospitality Revenue</span> & Global Market Growth.",
+        hero_desc: "Commercially driven sales leader with 10 years of progressive mastery in luxury beachfront hospitality at Palm Garden Beach Resort Hoi An (210 keys). Expert in International Inbound Wholesale, MICE scaling, and high-stakes B2B negotiations.",
+        hero_cta_msg: "Send Direct Message",
+        hero_cta_resume: "View Resume",
+        stat_years_unit: "Yrs",
+        stat_years_label: "Luxury Hospitality",
+        stat_kpi_label: "2025 Sales KPI Beat",
+        stat_mice_label: "MICE Growth (YoY)",
+        profile_name: "Nguyễn Huy Thịnh",
+        profile_title: "Senior Sales Manager",
+        profile_resort: "Palm Garden Beach Resort Hoi An • HCMC Rep. Office",
+        badge_feeder: "CIS & Europe Feeder",
+        badge_contract: "Contracting & Allotment",
+        badge_leader: "Team Mentor",
+        sec_achieve_tag: "Proven Value Delivery",
+        sec_achieve_title: "Measurable Business Impact",
+        sec_achieve_desc: "Proven history of surpassing institutional targets, penetrating high-value international source markets, and maximizing portfolio ADR.",
+        m1_year: "Year 2025",
+        m1_title: "Annual Target Exceeded",
+        m1_desc: "Drove unprecedented revenue growth across Leisure, Wholesale, Corporate & MICE via inbound global feeder channels.",
+        m2_year: "Market Expansion",
+        m2_val: "CIS & Russia",
+        m2_title: "Charter & Allotment Deals",
+        m2_desc: "Secured major commitments following direct representation at international travel summits in Uzbekistan.",
+        m3_year: "Year 2024",
+        m3_title: "MICE Revenue Growth",
+        m3_desc: "Acquired major corporate partnerships and conference bookings through aggressive consultative bidding.",
+        m4_year: "Synergy & Weddings",
+        m4_title: "Wedding Revenue Boost",
+        m4_desc: "Achieved via cross-department synergy; also awarded Employee of the Year for outstanding sales performance.",
+        sec_exp_tag: "10-Year Trajectory",
+        sec_exp_title: "Professional Experience",
+        sec_exp_desc: "A sustained record of continuous advancement at Palm Garden Beach Resort Hoi An (210-key luxury beachfront resort).",
+        r1_date: "Aug 2024 – Present",
+        r1_role: "Senior Sales Manager",
+        r1_location: "Ho Chi Minh City Representative Office",
+        r1_b1: "<strong>Exceeded 2025 Sales KPI by 38%</strong>, spearheading inbound international leisure and wholesale revenues.",
+        r1_b2: "<strong>International Tour Operator Portfolio:</strong> Managed leading wholesalers across CIS, Russia, Germany, France, Australia, and UK for guaranteed year-round room nights.",
+        r1_b3: "<strong>Yield & Rate Optimization:</strong> Successfully negotiated <strong>8%–12% rate increases</strong> while safeguarding 100% account retention.",
+        r1_b4: "<strong>People Leadership:</strong> Direct leadership and mentorship of <strong>4 Sales Managers</strong>, implementing KPI scorecards and targeted coaching.",
+        r1_b5: "<strong>Global Representation:</strong> Represented property at overseas sales missions, roadshows, and trade expositions.",
+        r2_date: "Jan 2020 – Jul 2024",
+        r2_role: "Sales Manager",
+        r2_location: "HCMC Representative Office",
+        r2_desc: "Spearheaded commercial B2B sales pipelines, expanded national corporate and agency accounts, navigated market pivots during pandemic challenges, and accelerated post-crisis recovery across group and leisure segments.",
+        r3_date: "Jul 2017 – Dec 2019",
+        r3_role: "Assistant Sales Manager",
+        r3_location: "On-site Property • Hoi An",
+        r3_desc: "Supervised on-property site inspections, high-profile corporate retreats, and contract execution. Supported senior directors in inventory allotment planning and seasonal rate strategies.",
+        r4_date: "Jul 2015 – Jun 2017",
+        r4_role: "Sales Executive",
+        r4_location: "On-site Property • Hoi An",
+        r4_award: "★ Employee of the Year 2017",
+        r4_desc: "Managed direct guest bookings, corporate MICE coordination, customer retention campaigns, and field sales visits; recognized as top performer of the year.",
+        sec_skill_tag: "Skills Matrix",
+        sec_skill_title: "Strategic & Leadership Competencies",
+        sk_p1_title: "Commercial & Strategic Acumen",
+        sk_1: "Strategic Sales Planning & Market Penetration",
+        sk_2: "Revenue Forecasting & Budget Management",
+        sk_3: "RevPAR, ADR & Occupancy Optimization",
+        sk_4: "Contract Negotiation & Tiered Rate Strategy",
+        sk_5: "Corporate & MICE Segment Development",
+        sk_6: "Business Intelligence & Competitive Analytics",
+        sk_p2_title: "Leadership & Operational Mastery",
+        sk_7: "Sales Team Leadership & Mentorship (4+ Direct Reports)",
+        sk_8: "KPI Monitoring & Structured Performance Coaching",
+        sk_9: "High-Stakes Decision-Making Under Pressure",
+        sk_10: "Multi-Department Stakeholder Collaboration",
+        sk_11: "Crisis Adaptability & Change Management",
+        sk_12: "Trilingual Business Negotiations",
+        lvl_expert: "Expert",
+        lvl_advanced: "Advanced",
+        lvl_active: "Active",
+        lvl_core: "Core",
+        lvl_seamless: "Seamless",
+        lvl_resilient: "Resilient",
+        sec_edu_tag: "Academic Background",
+        sec_edu_title: "Education & Certifications",
+        edu_deg: "Bachelor of English Language",
+        edu_desc: "Foundation for fluent international negotiations and contract execution.",
+        cert_title: "Responsible Tourism Marketing",
+        cert_issuer: "Mentoring Workshop Certification",
+        cert_desc: "Sustainable tourism practices, ethical destination promotion.",
+        lang_title: "Languages",
+        sec_ref_tag: "Verification & Trust",
+        sec_ref_title: "Professional References",
+        ref1_title: "Former DOSM (2015–2018)",
+        ref2_title: "Former Acting HRM (2015–2019)",
+        ref3_title: "Current Director of Sales (DOS) • Palm Garden Beach Resort",
+        ref3_status: "Available upon final interview stage",
+        sec_contact_tag: "Start a Conversation",
+        sec_contact_title: "Get In Touch Directly",
+        sec_contact_desc: "Fill out the form below to send an email directly to my inbox (<strong>bennguyenht54@gmail.com</strong>), or reach out through my phone and social channels.",
+        card_phone: "Phone / WhatsApp",
+        card_email: "Direct Email",
+        card_linkedin: "LinkedIn Network",
+        card_linkedin_sub: "Connect on LinkedIn",
+        location_title: "Location & Availability",
+        location_desc: "Based in Ho Chi Minh City, Vietnam. Available for executive travel, international trade shows, and corporate delegations worldwide.",
+        form_name: "Your Name *",
+        form_email: "Your Email *",
+        form_company: "Organization / Tour Operator",
+        form_topic: "Purpose / Subject",
+        opt_recruitment: "Executive Career Opportunity",
+        opt_b2b: "B2B / Tour Operator Allotment",
+        opt_mice: "MICE & Corporate Event Inquiry",
+        opt_general: "General Discussion",
+        form_msg: "Message *",
+        form_submit: "Send Email Now",
+        footer_rights: "All rights reserved.",
+        footer_top: "Back to Top"
+      },
+      zh: {
+        nav_name: "阮輝盛 (BEN)",
+        nav_title: "奢華酒店銷售總監 / 業務主管",
+        nav_about: "關於我",
+        nav_impact: "業績與成就",
+        nav_exp: "職涯歷程",
+        nav_skills: "核心專業能力",
+        nav_ref: "專業推薦人",
+        btn_contact: "立即聯繫",
+        hero_badge: "現正開放高端管理職位與合作機會",
+        hero_title: "引領 <span class=\"text-amber-600 dark:text-brand-gold italic\">酒店收益增長</span> 與全球市場開拓。",
+        hero_desc: "擁有 10 年頂級海濱度假村（會安棕櫚花園海灘度假村，210間豪華客房）深厚經驗的商業銷售負責人。精通國際入境批發市場、會獎旅遊（MICE）擴展及高規格商務談判。",
+        hero_cta_msg: "發送直接郵件",
+        hero_cta_resume: "查看簡歷",
+        stat_years_unit: "年",
+        stat_years_label: "高端酒店深耕",
+        stat_kpi_label: "2025年 超額達成業績",
+        stat_mice_label: "MICE 年增長率",
+        profile_name: "阮輝盛 (Nguyễn Huy Thịnh)",
+        profile_title: "資深銷售經理 (Senior Sales Manager)",
+        profile_resort: "會安棕櫚花園度假村 • 胡志明市代表處",
+        badge_feeder: "獨聯體與歐美客源市場",
+        badge_contract: "合約談判與配額管理",
+        badge_leader: "團隊領導與輔導",
+        sec_achieve_tag: "實績驗證",
+        sec_achieve_title: "量化業務成就",
+        sec_achieve_desc: "持續超越集團目標、深度開拓高利潤國際客源市場並最大化整體平均房價 (ADR)。",
+        m1_year: "2025 年度",
+        m1_title: "年銷售指標超額達成",
+        m1_desc: "透過國際入境管道，全面帶動休閒、批發旅行社、企業與 MICE 各板塊營收破紀錄增長。",
+        m2_year: "國際版圖拓展",
+        m2_val: "獨聯體與俄羅斯",
+        m2_title: "包機與長期配額合作",
+        m2_desc: "代表度假村親赴烏茲別克國際旅遊展，成功簽署多份大型包機與房間承諾配額。",
+        m3_year: "2024 年度",
+        m3_title: "MICE 營收倍增",
+        m3_desc: "透過顧問式競標與深度拜訪，成功簽訂多家頂級企業合作協議，實現 200% 年增長。",
+        m4_year: "跨部門協同效益",
+        m4_title: "婚宴營收暴增",
+        m4_desc: "跨部門聯動實現婚宴營收增長 300%；榮獲年度最佳員工（Employee of the Year）殊榮。",
+        sec_exp_tag: "十年晉升之路",
+        sec_exp_title: "職業經歷與職涯軌跡",
+        sec_exp_desc: "於會安棕櫚花園度假村（Palm Garden Beach Resort Hoi An，210間豪華客房）連續穩健晉升。",
+        r1_date: "2024年8月 – 至今",
+        r1_role: "資深銷售經理 (Senior Sales Manager)",
+        r1_location: "胡志明市代表處",
+        r1_b1: "<strong>2025 年業績指標超額達成 38%</strong>，主導國際休閒客與入境批發市場營收。",
+        r1_b2: "<strong>國際大型批發商管理：</strong>統籌俄羅斯、獨聯體、德國、法國、澳洲及英國重要旅行商，確保全年穩定出房量。",
+        r1_b3: "<strong>收益與房價優化：</strong>成功洽談<strong>簽約房價上調 8%–12%</strong>，同時維持 100% 客戶留存率。",
+        r1_b4: "<strong>團隊領導力：</strong>指導與培訓 <strong>4 位銷售經理</strong>，推行結構化 KPI 評估與業績輔導機制。",
+        r1_b5: "<strong>國際形象代表：</strong>代表度假村參與海外路演、國際旅遊博覽會與商務拓展。",
+        r2_date: "2020年1月 – 2024年7月",
+        r2_role: "銷售經理 (Sales Manager)",
+        r2_location: "胡志明市代表處",
+        r2_desc: "開拓南部及全國 B2B 企業大戶與旅行社業務，引領團隊度過疫情挑戰並於復甦期快速拉動各板塊成長。",
+        r3_date: "2017年7月 – 2019年12月",
+        r3_role: "助理銷售經理 (Assistant Sales Manager)",
+        r3_location: "會安度假村現場",
+        r3_desc: "負責度假村實地考察接待、大型企業年會執行與配額規劃，協助高層制定各季度房價策略。",
+        r4_date: "2015年7月 – 2017年6月",
+        r4_role: "銷售專員 (Sales Executive)",
+        r4_location: "會安度假村現場",
+        r4_award: "★ 2017 年度最佳員工",
+        r4_desc: "統籌企業訂單、MICE 活動籌辦及市場拜訪，表現傑出榮獲 2017 年度卓越銷售員工獎。",
+        sec_skill_tag: "能力矩陣",
+        sec_skill_title: "策略營銷與領導核心能力",
+        sk_p1_title: "商業策略與營收管理",
+        sk_1: "策略銷售規劃與市場開拓",
+        sk_2: "營收預測與年度預算編制",
+        sk_3: "RevPAR、ADR 及住房率極大化",
+        sk_4: "合約談判與階梯定價策略",
+        sk_5: "企業客戶與 MICE 會展業務拓展",
+        sk_6: "市場情報與競爭態勢數據分析",
+        sk_p2_title: "團隊領導與營運協同",
+        sk_7: "銷售團隊管理與輔導培訓（帶領 4+ 位經理）",
+        sk_8: "KPI 績效監控與專業教練輔導",
+        sk_9: "高壓環境下的決策力",
+        sk_10: "跨部門高效協同（營收、餐飲、客房）",
+        sk_11: "危機應變與組織變革適應力",
+        sk_12: "三語國際商務溝通談判",
+        lvl_expert: "精通",
+        lvl_advanced: "高級",
+        lvl_active: "實戰",
+        lvl_core: "核心",
+        lvl_seamless: "卓越",
+        lvl_resilient: "強韌",
+        sec_edu_tag: "學歷背景",
+        sec_edu_title: "學歷與專業認證",
+        edu_deg: "英國語文學士 (Bachelor of English)",
+        edu_desc: "胡志明市科技大學 (HUTECH)，奠定流暢的國際商務溝通與合約簽署基礎。",
+        cert_title: "負責任旅遊營銷認證",
+        cert_issuer: "Responsible Tourism Marketing 專題工作坊",
+        cert_desc: "永續旅遊實踐與綠色目的地推廣。",
+        lang_title: "掌握語言",
+        sec_ref_tag: "信譽驗證",
+        sec_ref_title: "推薦人資訊",
+        ref1_title: "前營銷總監 DOSM (2015–2018)",
+        ref2_title: "前人力資源代理經理 (2015–2019)",
+        ref3_title: "現任銷售總監 (DOS) • 棕櫚花園度假村",
+        ref3_status: "最終面試階段可供查核",
+        sec_contact_tag: "開啟商務對話",
+        sec_contact_title: "直接與我取得聯繫",
+        sec_contact_desc: "填寫下方表單可將信件直接發送至我的個人信箱（<strong>bennguyenht54@gmail.com</strong>），或透過電話與 LinkedIn 聯繫。",
+        card_phone: "電話 / WhatsApp",
+        card_email: "電子郵件",
+        card_linkedin: "領英人脈 (LinkedIn)",
+        card_linkedin_sub: "前往 LinkedIn 個人檔案",
+        location_title: "現居地與出差安排",
+        location_desc: "現居越南胡志明市。可隨時配合全球出差、國際旅遊博覽會及海外代表團拜訪。",
+        form_name: "您的姓名 *",
+        form_email: "您的電子郵箱 *",
+        form_company: "所屬機構 / 旅行社名稱",
+        form_topic: "洽詢主旨",
+        opt_recruitment: "高階管理職位邀請",
+        opt_b2b: "B2B 旅行社 / 配額合作",
+        opt_mice: "MICE 與企業活動諮詢",
+        opt_general: "一般商務諮詢",
+        form_msg: "詳細留言內容 *",
+        form_submit: "立即發送郵件",
+        footer_rights: "版權所有，翻印必究。",
+        footer_top: "回到頂部"
+      },
+      vi: {
+        nav_name: "NGUYỄN HUY THỊNH",
+        nav_title: "Hospitality Sales Leader",
+        nav_about: "Giới thiệu",
+        nav_impact: "Thành tựu & Chỉ số",
+        nav_exp: "Kinh nghiệm",
+        nav_skills: "Kỹ năng chuyên môn",
+        nav_ref: "Người tham chiếu",
+        btn_contact: "Liên hệ ngay",
+        hero_badge: "Sẵn sàng cho các cơ hội quản lý cấp cao mới",
+        hero_title: "Kiến tạo <span class=\"text-amber-600 dark:text-brand-gold italic\">Doanh thu Khách sạn</span> & Mở rộng Thị trường Quốc tế.",
+        hero_desc: "Chuyên gia quản lý kinh doanh với 10 năm kinh nghiệm thăng tiến vượt bậc trong phân khúc resort biển cao cấp tại Palm Garden Beach Resort Hội An (210 phòng). Chuyên sâu về Inbound Wholesale, bứt phá MICE và đàm phán hợp đồng cấp cao.",
+        hero_cta_msg: "Gửi thư trực tiếp",
+        hero_cta_resume: "Xem bản CV đầy đủ",
+        stat_years_unit: "Năm",
+        stat_years_label: "Resort 5 Sao Cao Cấp",
+        stat_kpi_label: "Vượt KPI Năm 2025",
+        stat_mice_label: "Tăng trưởng MICE (YoY)",
+        profile_name: "Nguyễn Huy Thịnh (Ben)",
+        profile_title: "Senior Sales Manager",
+        profile_resort: "Palm Garden Beach Resort Hội An • VPĐD TP. Hồ Chí Minh",
+        badge_feeder: "Thị trường CIS & Châu Âu",
+        badge_contract: "Hợp đồng & Allotment",
+        badge_leader: "Đào tạo & Dẫn dắt đội ngũ",
+        sec_achieve_tag: "Giá trị thực chứng",
+        sec_achieve_title: "Thành Tựu Kinh Doanh Nổi Bật",
+        sec_achieve_desc: "Bề dày thành tích liên tục vượt chỉ tiêu doanh số, mở rộng nguồn khách quốc tế giá trị cao và tối ưu chỉ số ADR toàn danh mục.",
+        m1_year: "Năm 2025",
+        m1_title: "Vượt Chỉ Tiêu Doanh Thu",
+        m1_desc: "Thúc đẩy doanh thu kỷ lục trên các phân khúc Leisure, Wholesale, Doanh nghiệp & MICE thông qua các kênh đối tác toàn cầu.",
+        m2_year: "Mở Rộng Thị Trường",
+        m2_val: "CIS & Nga",
+        m2_title: "Thỏa Thuận Charter & Allotment",
+        m2_desc: "Đại diện khu nghỉ dưỡng tại hội chợ du lịch quốc tế ở Uzbekistan, chốt thành công các cam kết phòng số lượng lớn.",
+        m3_year: "Năm 2024",
+        m3_title: "Tăng Trưởng Doanh Thu MICE",
+        m3_desc: "Tăng gấp đôi doanh thu MICE nhờ tiếp cận mục tiêu chiến lược và đàm phán hợp đồng đoàn doanh nghiệp lớn.",
+        m4_year: "Liên Kết & Đám Cưới",
+        m4_title: "Bứt Phá Tiệc Cưới",
+        m4_desc: "Tăng 300% doanh thu tiệc cưới nhờ phối hợp liên phòng ban; Đạt danh hiệu Nhân viên xuất sắc nhất năm (Employee of the Year).",
+        sec_exp_tag: "Hành trình 10 năm",
+        sec_exp_title: "Kinh Nghiệm Làm Việc",
+        sec_exp_desc: "Lộ trình thăng tiến bền vững và cống hiến 10 năm tại Palm Garden Beach Resort Hội An (Resort biển 5 sao, quy mô 210 phòng).",
+        r1_date: "08/2024 – Hiện tại",
+        r1_role: "Senior Sales Manager",
+        r1_location: "Văn phòng Đại diện TP. Hồ Chí Minh",
+        r1_b1: "<strong>Vượt 38% chỉ tiêu doanh số năm 2025</strong>, dẫn đầu doanh thu thị trường inbound quốc tế và wholesale.",
+        r1_b2: "<strong>Quản lý đối tác lữ hành quốc tế:</strong> Trực tiếp phụ trách các công ty lữ hành lớn từ CIS, Nga, Đức, Pháp, Úc và Anh Quốc, đảm bảo lượng đêm phòng ổn định quanh năm.",
+        r1_b3: "<strong>Tối ưu hóa giá & Doanh thu:</strong> Phối hợp với Revenue tăng <strong>8%–12% giá hợp đồng</strong> trong khi vẫn duy trì 100% tài khoản đối tác.",
+        r1_b4: "<strong>Lãnh đạo đội ngũ:</strong> Trực tiếp quản lý và đào tạo <strong>4 Sales Manager</strong>, thiết lập hệ thống đo lường KPI và huấn luyện thực tế.",
+        r1_b5: "<strong>Đại diện quốc tế:</strong> Đại diện resort tham gia các chuyến quảng bá xúc tiến bán lẻ, hội chợ du lịch trong và ngoài nước.",
+        r2_date: "01/2020 – 07/2024",
+        r2_role: "Sales Manager",
+        r2_location: "Văn phòng Đại diện TP. Hồ Chí Minh",
+        r2_desc: "Dẫn dắt các kênh bán hàng B2B, mở rộng tệp khách hàng doanh nghiệp phía Nam, chèo lái vượt qua giai đoạn đại dịch và phục hồi nhanh chóng nguồn khách đoàn.",
+        r3_date: "07/2017 – 12/2019",
+        r3_role: "Assistant Sales Manager",
+        r3_location: "Tại Resort • Hội An",
+        r3_desc: "Tổ chức khảo sát điểm đến cho đoàn VIP, điều phối các sự kiện hội nghị cao cấp và quản lý việc phân bổ phòng mùa cao điểm.",
+        r4_date: "07/2015 – 06/2017",
+        r4_role: "Sales Executive",
+        r4_location: "Tại Resort • Hội An",
+        r4_award: "★ Nhân viên Xuất sắc 2017",
+        r4_desc: "Phụ trách đặt phòng đoàn, điều phối MICE và chăm sóc khách hàng trực tiếp; được trao tặng giải thưởng Nhân viên xuất sắc nhất năm 2017.",
+        sec_skill_tag: "Ma trận Năng lực",
+        sec_skill_title: "Năng Lực Chiến Lược & Lãnh Đạo",
+        sk_p1_title: "Tư Duy Thương Mại & Chiến Lược",
+        sk_1: "Hoạch định chiến lược kinh doanh & Thâm nhập thị trường",
+        sk_2: "Dự báo doanh thu & Quản lý ngân sách hàng năm",
+        sk_3: "Tối ưu hóa RevPAR, ADR và Công suất phòng",
+        sk_4: "Đàm phán hợp đồng & Chiến lược biểu giá linh hoạt",
+        sk_5: "Phát triển phân khúc Khách hàng Doanh nghiệp & MICE",
+        sk_6: "Phân tích dữ liệu kinh doanh & Nghiên cứu đối thủ cạnh tranh",
+        sk_p2_title: "Năng Lực Lãnh Đạo & Quản Trị",
+        sk_7: "Quản lý & Đào tạo đội ngũ kinh doanh (Dẫn dắt 4+ nhân sự)",
+        sk_8: "Thiết lập KPI & Đánh giá hiệu suất định kỳ",
+        sk_9: "Kỹ năng ra quyết định dưới áp lực cao",
+        sk_10: "Phối hợp liên phòng ban nhịp nhàng (Revenue, F&B, FO)",
+        sk_11: "Quản trị sự thay đổi & Thích ứng linh hoạt",
+        sk_12: "Giao dịch và đàm phán thương mại 3 ngôn ngữ",
+        lvl_expert: "Chuyên sâu",
+        lvl_advanced: "Nâng cao",
+        lvl_active: "Thực chiến",
+        lvl_core: "Cốt lõi",
+        lvl_seamless: "Nhịp nhàng",
+        lvl_resilient: "Bền bỉ",
+        sec_edu_tag: "Nền tảng Học vấn",
+        sec_edu_title: "Học Vấn & Chứng Chỉ",
+        edu_deg: "Cử nhân Ngôn ngữ Anh",
+        edu_desc: "Trường Đại học Công nghệ TP.HCM (HUTECH), nền tảng vững chắc cho đàm phán quốc tế.",
+        cert_title: "Responsible Tourism Marketing",
+        cert_issuer: "Chứng chỉ Đào tạo Tiếp thị Du lịch Bền vững",
+        cert_desc: "Phương pháp tiếp thị có trách nhiệm và phát triển điểm đến xanh.",
+        lang_title: "Ngôn ngữ",
+        sec_ref_tag: "Minh chứng uy tín",
+        sec_ref_title: "Người Tham Chiếu (References)",
+        ref1_title: "Nguyên Giám đốc Kinh doanh & Tiếp thị DOSM (2015–2018)",
+        ref2_title: "Nguyên Quyền Trưởng phòng Nhân sự (2015–2019)",
+        ref3_title: "Giám đốc Kinh doanh (DOS) đương nhiệm • Palm Garden Resort",
+        ref3_status: "Sẵn sàng liên hệ ở vòng phỏng vấn cuối",
+        sec_contact_tag: "Kết nối hợp tác",
+        sec_contact_title: "Liên Hệ Trực Tiếp Với Tôi",
+        sec_contact_desc: "Điền biểu mẫu dưới đây để gửi tin nhắn thẳng tới hộp thư của tôi (<strong>bennguyenht54@gmail.com</strong>), hoặc liên hệ qua điện thoại & LinkedIn.",
+        card_phone: "Điện thoại / Zalo",
+        card_email: "Email Trực tiếp",
+        card_linkedin: "Hồ sơ LinkedIn",
+        card_linkedin_sub: "Kết nối trên LinkedIn",
+        location_title: "Địa điểm & Khả năng di chuyển",
+        location_desc: "Hiện đang sinh sống tại TP. Hồ Chí Minh. Sẵn sàng đi công tác trong và ngoài nước hoặc tham gia các hội chợ xúc tiến thương mại.",
+        form_name: "Họ và tên của bạn *",
+        form_email: "Email liên hệ *",
+        form_company: "Tên Công ty / Đơn vị lữ hành",
+        form_topic: "Mục đích liên hệ",
+        opt_recruitment: "Cơ hội việc làm / Quản lý cấp cao",
+        opt_b2b: "Hợp tác B2B / Phân bổ phòng Allotment",
+        opt_mice: "Tổ chức sự kiện MICE / Khách đoàn",
+        opt_general: "Trao đổi chung",
+        form_msg: "Nội dung tin nhắn *",
+        form_submit: "Gửi Email Ngay",
+        footer_rights: "Toàn bộ quyền được bảo lưu.",
+        footer_top: "Lên đầu trang"
+      }
+    };
+
+    // Current language tracker
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+      document.getElementById('lang-select').value = lang;
+
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // Language change listener
+    document.getElementById('lang-select').addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
+
+    // Check stored language preference or default to English
+    const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+    setLanguage(savedLang);
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Theme toggler logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // --- ASYNC FORM SUBMISSION (DIRECT TO bennguyenht54@gmail.com VIA FORMSPREE) ---
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitTexts = {
+        en: { sending: "Sending message...", success: "✓ Message sent successfully! I will reply to your email shortly.", error: "Notice: Unable to send directly via server. Opening your email app..." },
+        zh: { sending: "正在發送郵件...", success: "✓ 郵件已成功寄出！我將盡快回覆您的郵件。", error: "伺服器發送超時，正在為您打開郵件客戶端..." },
+        vi: { sending: "Đang gửi email...", success: "✓ Đã gửi tin nhắn thành công! Tôi sẽ phản hồi email của bạn trong thời gian sớm nhất.", error: "Không thể gửi qua server. Đang mở ứng dụng email của bạn..." }
+      };
+
+      const langObj = submitTexts[currentLang] || submitTexts.en;
+
+      submitBtn.disabled = true;
+      btnText.innerText = langObj.sending;
+      formStatus.classList.add('hidden');
+
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        topic: document.getElementById('topic').value,
+        message: document.getElementById('message').value,
+        language: currentLang,
+        submittedAt: new Date().toISOString()
+      };
+
+      // 1. BACKUP TO FIREBASE FIRESTORE
+      if (window._firebaseSaveDoc) {
+        window._firebaseSaveDoc(payload)
+          .then(() => console.log("✓ Backed up to Firebase Firestore"))
+          .catch(err => console.log("Firebase sync note:", err.message));
+      }
+
+      // 2. SEND TO EMAIL VIA FORMSPREE
+
+      try {
+        const response = await fetch("https://formspree.io/f/bennguyenht54@gmail.com", {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.className = "p-4 rounded-xl text-sm font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800";
+          formStatus.innerHTML = langObj.success;
+          formStatus.classList.remove('hidden');
+          contactForm.reset();
+        } else {
+          throw new Error('Formspree returned non-200');
+        }
+      } catch (err) {
+        // Fallback: Mailto link triggered with form content
+        const nameVal = encodeURIComponent(document.getElementById('name').value);
+        const subjectVal = encodeURIComponent("[" + document.getElementById('topic').value + "] Portfolio Inquiry from " + document.getElementById('name').value);
+        const bodyVal = encodeURIComponent("From: " + document.getElementById('name').value + " (" + document.getElementById('email').value + ")\nCompany: " + document.getElementById('company').value + "\n\nMessage:\n" + document.getElementById('message').value);
+        
+        formStatus.className = "p-4 rounded-xl text-sm font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-brand-gold border border-amber-200 dark:border-amber-800";
+        formStatus.innerHTML = langObj.error;
+        formStatus.classList.remove('hidden');
+
+        window.location.href = `mailto:bennguyenht54@gmail.com?subject=${subjectVal}&body=${bodyVal}`;
+      } finally {
+        submitBtn.disabled = false;
+        btnText.innerText = translations[currentLang]?.form_submit || "Send Email Now";
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
